@@ -8,5 +8,5 @@ def main_config(): #配置文件读取
     print(f"获取配置信息:{main_controller}")
 
 if __name__ == "__main__":
-    main_config
+    main_config()
 
