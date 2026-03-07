@@ -1,0 +1,25 @@
+# Python 字节码缓存
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 虚拟环境
+venv/
+env/
+.env
+
+# 配置文件（如果包含敏感信息，如密码、密钥）
+config.ini
+*.local.ini
+
+# 日志文件
+*.log
+logs/
+
+# 编辑器/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
