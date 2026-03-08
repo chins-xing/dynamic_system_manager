@@ -8,7 +8,7 @@ def main_config(): #配置文件读取
     main_controller = config.get('config_name','config-name')
     print(f"已读取文件:{main_controller}")
 
-if __name__ == "__main__":
+if __name__ == "__main__": #用户交互
     print("[1]读取配置")
     print("[2]应用配置文件")
     print("[0]退出程序")
