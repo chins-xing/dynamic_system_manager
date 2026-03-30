@@ -15,18 +15,32 @@ class shell(cmd.Cmd):
         main_controller = config.get('config_name','config-name')
         print(f"已读取文件:{main_controller}")    
 
-    def do_SC(self,arg):
-        core.service_controller.test()
+    def do_DSC(self,arg):
+        if arg == (""):
+            print("请指定一个需要使用的模块。如需帮助，请输入DSC help")
 
-    def do_GP(self,arg):
-        core.group_policy.test()
-    
-    def do_FC(self,arg):
-        core.firewall_controller.test()
+        if arg == ("FWM"):
+            core.firewall_controller.test()
+
+        if arg == ("GPM"):
+            core.group_policy.test()
+
+        if arg == ("SCM"):
+             core.service_controller.test()
+
+        if arg ==("help"):
+            print("DSC(动态安全控制类,包含三个基本模块)")
+            print("FWM(基本模块,防火墙规则管理)")
+            print("GPM(基本模块,组策略修改)")
+            print("SCM(基本模块,系统服务控制)")
+            print("")
 
     def do_help(self,arg):
         return super().do_help(arg)
     
+    def do_test(self,arg):
+        print(f"用户输入测试内容为:{arg}")
+
     def do_exit(self,arg):
         return True
 if __name__ == "__main__": #用户交互
