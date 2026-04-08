@@ -6,7 +6,7 @@ import core.group_policy
 import core.firewall_controller
 
 class shell(cmd.Cmd):
-    prompt = ">>>"
+    prompt = ">>>:"
     intro = "主程序启动"
     
     def do_config(self,arg):    #配置文件读取
