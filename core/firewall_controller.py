@@ -3,7 +3,7 @@ import win32com.client
 import cmd
 
 class shell(cmd.Cmd):
-        prompt = (">>>@FW:")
+        prompt = ("@FW>>>")
         intro = ("防火墙规则修改模块已启动")
     
         def do_run(self,arg):
@@ -13,6 +13,11 @@ class shell(cmd.Cmd):
                 print("已获取防火墙控制")
             except Exception as e:
                 print(f"无法获取防火墙控制，错误信息为{e}")
+
+        def __init__(self):
+            super().__init__()
+            self.fw_policy = None
+            self.fw_rules = None
 
         def do_exit(self,arg):
              return True
