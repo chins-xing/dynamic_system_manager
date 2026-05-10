@@ -4,6 +4,7 @@ import configparser
 import core.service_controller
 import core.group_policy
 import core.firewall_controller
+import core.run
 
 class shell(cmd.Cmd):
     prompt = "@>>>"
@@ -19,8 +20,11 @@ class shell(cmd.Cmd):
         if arg == (""):
             print("请指定一个需要使用的模块。如需帮助，请输入DSC help")
 
+        if arg == ("RUN"):   
+            core.run.test()
+
         if arg == ("FWM"):
-            core.firewall_controller.test()
+            core.firewall_controller.run()
 
         if arg == ("GPM"):
             core.group_policy.test()
